@@ -1,19 +1,38 @@
+from datetime import date, datetime
 print("Welcome to the tech support chatbot!")
 name = input("Please enter your name: ")
 age = int(input("Hello "+ name + ", how old are you? "))
+current_time = datetime.now()
+your_time = current_time.hour -5
+
+def time():
+    if your_time == 23 or your_time<=3:
+        print(f"\nWow {name}, I guess you're a night owl!")
+    elif your_time >=4 and your_time <=7:
+        print(f"\nWow {name}, why are you doing this so early in the morning?")
+    elif your_time >=8 and your_time <=11:
+        print(f"\nGood morning, {name}!")
+    elif your_time >=12 and your_time <= 16:
+        print(f"\nGood afternoon, {name}!")
+    elif your_time >=17 and your_time <= 22:
+        print(f"\nGood evening, {name}!")
+
 def myAge(age):
     if age <15:
-        print("\nWelcome! You're a young fella!\n")
-    if age >=15<17:
+        print("\nWelcome! You're a young fellow!\n")
+    elif age >=15 and age < 18:
         print("\nI wish I was in high school again... how may I help you?\n")
-    if age >=18<55:
+    elif age >=18 and age <55:
         print("\nNot too old yet.. how may I help you?\n")
-    if age >=55<120:
+    elif age >=55 and age <120:
         print("\nWow! Good job taking care of yourself and living. Welcome! How may I help you?\n")
-    if age >=120:
+    elif age >=120:
         print("\nI don't think anyone living is that age right now.. but whatever.\n")
+time()
 
 myAge(age)
+
+
 while True:
     print("Here are the following options you can choose from:\n1. Placeholder 1 \n2. Placeholder 2\n3. Placeholder 3\n4. Placeholder 4 \n5. Exit the conversation.")
     the_choice = int(input("Enter the number of your choice: "))
